@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <ImageView
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/result_image"
+        android:layout_gravity="center"
+        android:layout_width="116dp"
+        android:layout_height="116dp" />
+
+
+        <WebView
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:id="@+id/web_view"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </WebView>
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/show_all_button"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#f49803"
+        android:text="查看该商品防伪码的验证情况"
+        android:textColor="#fff"
+        android:textSize="18sp" />
+
+
+</LinearLayout>
