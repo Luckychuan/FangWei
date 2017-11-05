@@ -30,4 +30,20 @@ public class RequestPresenter extends BasePresenter {
         });
     }
 
+    public void requestAllData(String code){
+        mView.showProgressBar();
+        mModel.requestAllData(code, new RequestModel.Callback<FangWeiBean>() {
+            @Override
+            public void onSuccess(FangWeiBean data) {
+                mView.updateUI(data);
+                mView.hideProgressBar();
+            }
+
+            @Override
+            public void onError(String error) {
+                mView.onError(error);
+            }
+        });
+    }
+
 }

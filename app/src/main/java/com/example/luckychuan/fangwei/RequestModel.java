@@ -13,4 +13,7 @@ public interface RequestModel {
 
     void requestData(String code , Callback<FangWeiBean> callback);
 
+    void requestAllData(String code , Callback<FangWeiBean> callback);
+
+
 }

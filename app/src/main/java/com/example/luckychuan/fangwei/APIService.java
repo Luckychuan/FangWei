@@ -15,4 +15,7 @@ public interface APIService {
     @GET("Check.aspx?cmd=check&")
     Observable<FangWeiBean> getData(@Query("code") String code);
 
+    @GET("Check.aspx?cmd=getcheckinfo&")
+    Observable<FangWeiBean> getAllData(@Query("code") String code);
+
 }

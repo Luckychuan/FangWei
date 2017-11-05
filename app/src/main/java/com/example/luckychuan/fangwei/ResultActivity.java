@@ -73,7 +73,7 @@ public class ResultActivity extends AppCompatActivity implements MainView {
             webView.loadData(fangWeiBean.getData().getResultHTML(), "text/html; charset=UTF-8", null);
 
             Log.d(TAG, "updateUI: "+fangWeiBean.getData().getResultMsgID());
-            if(fangWeiBean.getData().getResultMsgID() == 212){
+            if(fangWeiBean.getData().getResultMsgID() == 222){
                 Button button = (Button) findViewById(R.id.show_all_button);
                 button.setVisibility(View.VISIBLE);
                 button.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +105,8 @@ public class ResultActivity extends AppCompatActivity implements MainView {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mPresenter.detach();
+        if(mPresenter != null){
+            mPresenter.detach();
+        }
     }
 }
