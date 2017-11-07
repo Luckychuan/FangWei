@@ -53,6 +53,7 @@ public class ResultActivity extends AppCompatActivity implements MainView {
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setBuiltInZoomControls(false);
+
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
@@ -62,7 +63,7 @@ public class ResultActivity extends AppCompatActivity implements MainView {
 
         ImageView resultImage = (ImageView) findViewById(R.id.result_image);
 
-        if(fangWeiBean.isSuccess()){
+        if (fangWeiBean.isSuccess()) {
 
             Glide.with(this)
                     .load(fangWeiBean.getData().getResultImg())
@@ -72,21 +73,21 @@ public class ResultActivity extends AppCompatActivity implements MainView {
 
             webView.loadData(fangWeiBean.getData().getResultHTML(), "text/html; charset=UTF-8", null);
 
-            Log.d(TAG, "updateUI: "+fangWeiBean.getData().getResultMsgID());
-            if(fangWeiBean.getData().getResultMsgID() == 222){
+            Log.d(TAG, "updateUI: " + fangWeiBean.getData().getResultMsgID());
+            if (fangWeiBean.getData().getResultMsgID() >= 100 && fangWeiBean.getData().getResultMsgID() <= 300) {
                 Button button = (Button) findViewById(R.id.show_all_button);
                 button.setVisibility(View.VISIBLE);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(ResultActivity.this,ShowAllActivity.class);
-                        intent.putExtra("code",mCode);
+                        Intent intent = new Intent(ResultActivity.this, ShowAllActivity.class);
+                        intent.putExtra("code", mCode);
                         startActivity(intent);
                     }
                 });
             }
 
-        }else{
+        } else {
 
         }
 
@@ -105,7 +106,7 @@ public class ResultActivity extends AppCompatActivity implements MainView {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(mPresenter != null){
+        if (mPresenter != null) {
             mPresenter.detach();
         }
     }

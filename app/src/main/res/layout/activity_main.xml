@@ -9,6 +9,7 @@
     tools:context="com.example.luckychuan.fangwei.MainActivity">
 
     <ImageView
+        android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -25,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
-            android:text="金风酒防伪系统"
+            android:text="@string/app_name"
             android:textColor="#c000"
             android:textSize="28sp" />
 
@@ -33,18 +34,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="32dp"
             android:text="请输入12位防伪码："
             android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/warn_text"
+            android:textColor="@color/colorAccent"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:text="还需要输入12位"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"/>
 
         <EditText
             android:id="@+id/edit_text"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:maxLines="1"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
+            android:layout_gravity="center_horizontal"
+            android:textSize="24sp"
+            android:maxLength="12"
+            android:gravity="center"
+            android:layout_marginLeft="56dp"
+            android:layout_marginRight="56dp" />
 
         <Button
             android:id="@+id/button"
@@ -52,7 +66,7 @@
             android:layout_height="48dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:background="#03A9F4"
             android:text="开始验证"
             android:textColor="#fff"
